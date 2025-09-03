@@ -1,0 +1,141 @@
+/* Navbar Container */
+.navbar {
+  background: linear-gradient(90deg, #003366, #0055aa, #0077cc);
+  color: #fff;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s ease;
+}
+
+/* Brand Logo */
+.navbar-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #ffcc00;
+  transform: scale(1.05);
+}
+
+/* Nav Links Container */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links li {
+  display: flex;
+}
+
+/* Each Nav Item */
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f0f0f0;
+  transition: all 0.3s ease;
+  padding: 8px 14px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Active Link */
+.nav-links a.active {
+  color: #ffcc00;
+  font-weight: 600;
+  background: rgba(255, 204, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(255, 204, 0, 0.3);
+}
+
+/* Icons */
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover .nav-icon {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+/* Mobile Hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #002244;
+    position: absolute;
+    top: 65px;
+    right: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 12px 10px;
+    justify-content: flex-start;
+  }
+
+  /* Show only icons on mobile */
+  .nav-links a span {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Mobile dropdown animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
