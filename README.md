@@ -70,7 +70,7 @@ src/
 
 1. Clone the repository
 ```
-git clone <your-repo-url>
+git clone <https://github.com/KashaveniSruthi/BookFinder>
 cd my_app
 ```
 2. Install dependencies
